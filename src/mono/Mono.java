@@ -4,6 +4,15 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
+/*
+ * Para facilitar la tarea al mono he obviado los signos de puntuacion en general, tambien he pensado en darle una probabilidad 
+ * de aparicion a cada letra como las que tiene el quijote, pero entonces daria prioridad al español frente al resto de idiomas, 
+ * y al tratarse de probabilidad, cuantas mas opciones se recojan mejor, asi que simplemente le he dado mas probabilidad al espacio por encima del resto
+ * y a la 'e' que si que le he dado un poco mas de probabilidad que es de mayor frecuencia en la mayoria de idiomas, y la 'ñ' tambien la he obviado,
+ * a la hora de analizar el texto la 'n' valdría como 'ñ'
+ * 
+ */
 public class Mono {
 
 	public static String caracter = "";
