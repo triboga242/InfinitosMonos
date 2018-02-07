@@ -21,7 +21,7 @@ public class Mono {
 	public static void escribe() {
 		BufferedWriter w = null;
 		int cont = 0;
-		float caps=1;
+		float caps=1f;
 		while (true) {
 			cont++;
 			int letterval = (int) Math.floor(Math.random() * (0 - 40 + 1) + 40);
