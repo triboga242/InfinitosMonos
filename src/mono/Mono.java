@@ -4,7 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 /*
  * Para facilitar la tarea al mono he obviado los signos de puntuacion en general, tambien he pensado en darle una probabilidad 
  * de aparicion a cada letra como las que tiene el quijote, pero entonces daria prioridad al español frente al resto de idiomas, 
@@ -21,7 +20,7 @@ public class Mono {
 	public static void escribe() {
 		BufferedWriter w = null;
 		int cont = 0;
-		float caps=1f;
+		float caps = 1f;
 		while (true) {
 			cont++;
 			int letterval = (int) Math.floor(Math.random() * (0 - 40 + 1) + 40);
@@ -36,7 +35,7 @@ public class Mono {
 				caracter = "C";
 			else if (letterval == 4)
 				caracter = "D";
-			else if (letterval == 5)
+			else if (letterval == 5 && letterval == 27)
 				caracter = "E";
 			else if (letterval == 6)
 				caracter = "F";
@@ -83,24 +82,24 @@ public class Mono {
 
 			if (cont % 100 == 0) {
 				System.out.println(caracter);
-				libro+=caracter+"\n";
+				libro += caracter + "\n";
 			} else {
 				System.out.print(caracter);
-				libro+=caracter;
+				libro += caracter;
 			}
-			if (cont==100000) {
-				cont=0;
-				
+			if (cont == 100000) {
+				cont = 0;
+
 				String nombre = "Capitulo_" + (caps);
 				try {
 					w = new BufferedWriter(new FileWriter(nombre + ".txt", true));
 					w.write(libro);
-					libro="";
+					libro = "";
 					w.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				caps++;	
+				caps++;
 			}
 		}
 	}
